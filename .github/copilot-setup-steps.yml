@@ -1,0 +1,28 @@
+# GitHub Copilot Setup Steps
+# This file configures the development environment for GitHub Copilot coding agent
+# It pre-installs dependencies to enable Copilot to build, test, and validate changes efficiently
+
+steps:
+  # Install Java Development Kit (required for Kotlin and Spring Boot)
+  - name: Setup Java
+    uses: actions/setup-java@v4
+    with:
+      distribution: 'temurin'
+      java-version: '17'
+      cache: 'gradle'
+  
+  # Make Gradle wrapper executable (if it exists)
+  - name: Make Gradle wrapper executable
+    run: |
+      if [ -f "./gradlew" ]; then
+        chmod +x ./gradlew
+      fi
+    shell: bash
+  
+  # Download and cache Gradle dependencies (if build.gradle.kts exists)
+  - name: Download Gradle dependencies
+    run: |
+      if [ -f "./gradlew" ] && [ -f "build.gradle.kts" ]; then
+        ./gradlew dependencies --no-daemon
+      fi
+    shell: bash
