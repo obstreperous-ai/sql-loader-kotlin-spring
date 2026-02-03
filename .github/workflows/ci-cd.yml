@@ -8,9 +8,14 @@ on:
   release:
     types: [ created ]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
     - uses: actions/checkout@v4
@@ -49,6 +54,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.event_name == 'push' || github.event_name == 'release'
+    permissions:
+      contents: read
     
     steps:
     - uses: actions/checkout@v4
@@ -77,6 +84,8 @@ jobs:
     needs: package
     runs-on: ubuntu-latest
     if: github.event_name == 'release'
+    permissions:
+      contents: write
     
     steps:
     - uses: actions/checkout@v4
