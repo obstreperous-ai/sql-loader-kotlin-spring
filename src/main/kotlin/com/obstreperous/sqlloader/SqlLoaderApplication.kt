@@ -2,12 +2,13 @@ package com.obstreperous.sqlloader
 
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 import org.springframework.boot.runApplication
 import picocli.CommandLine
 import picocli.CommandLine.IFactory
 import org.springframework.stereotype.Component
 
-@SpringBootApplication
+@SpringBootApplication(exclude = [DataSourceAutoConfiguration::class])
 class SqlLoaderApplication
 
 fun main(args: Array<String>) {

@@ -1,0 +1,28 @@
+{
+  "name": "Kotlin Spring Boot Development",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "features": {
+    "ghcr.io/devcontainers/features/gradle:1": {
+      "version": "8.5"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "fwcd.kotlin",
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-gradle",
+        "vscjava.vscode-spring-boot-dashboard",
+        "pivotal.vscode-boot-dev-pack"
+      ],
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.server.launchMode": "Standard"
+      }
+    }
+  },
+  "forwardPorts": [],
+  "postCreateCommand": "./gradlew build",
+  "remoteUser": "vscode"
+}
