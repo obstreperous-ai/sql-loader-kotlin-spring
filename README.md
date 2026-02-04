@@ -77,7 +77,7 @@ INSERT INTO users (name, email) VALUES ('Bob', 'bob@example.com');
 src/
 ├── main/
 │   ├── kotlin/
-│   │   └── com/obstreperous/sqlloader/
+│   │   └── ai/obstreperous/sqlloader/
 │   │       ├── SqlLoaderApplication.kt    # Main Spring Boot application
 │   │       ├── SqlLoaderCommand.kt        # Picocli CLI command
 │   │       └── SqlLoaderService.kt        # SQL execution service
@@ -85,7 +85,7 @@ src/
 │       └── application.properties         # Application configuration
 └── test/
     ├── kotlin/
-    │   └── com/obstreperous/sqlloader/
+    │   └── ai/obstreperous/sqlloader/
     │       └── SqlLoaderServiceTest.kt    # Service tests with Testcontainers
     └── resources/
         └── application-test.properties    # Test configuration
