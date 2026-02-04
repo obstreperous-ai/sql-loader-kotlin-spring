@@ -28,8 +28,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     
     // CLI
-    implementation("info.picocli:picocli:4.7.5")
-    implementation("info.picocli:picocli-spring-boot-starter:4.7.5")
+    implementation("info.picocli:picocli:4.7.7")
+    implementation("info.picocli:picocli-spring-boot-starter:4.7.7")
     
     // Database
     runtimeOnly("org.postgresql:postgresql")
