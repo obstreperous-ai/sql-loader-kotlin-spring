@@ -7,7 +7,7 @@ plugins {
     kotlin("plugin.spring") version "1.9.22"
 }
 
-group = "com.obstreperous"
+group = "ai.obstreperous"
 version = "0.1.0"
 
 java {

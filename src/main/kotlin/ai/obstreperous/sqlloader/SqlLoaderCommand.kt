@@ -1,4 +1,4 @@
-package com.obstreperous.sqlloader
+package ai.obstreperous.sqlloader
 
 import org.springframework.stereotype.Component
 import picocli.CommandLine.Command

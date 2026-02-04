@@ -1,4 +1,4 @@
-package com.obstreperous.sqlloader
+package ai.obstreperous.sqlloader
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
