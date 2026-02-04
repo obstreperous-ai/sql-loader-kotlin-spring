@@ -1,4 +1,4 @@
-package com.obstreperous.sqlloader
+package ai.obstreperous.sqlloader
 
 import org.springframework.stereotype.Service
 import java.io.File
