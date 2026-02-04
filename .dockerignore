@@ -1,0 +1,29 @@
+# Build artifacts
+.gradle/
+build/
+!build/libs/sql-loader.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+!README.md
+
+# Tests
+src/test/
+
+# Gradle wrapper (not needed in Docker)
+gradlew
+gradlew.bat
+gradle/
+
+# Other
+.DS_Store
+*.log

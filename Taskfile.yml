@@ -1,0 +1,59 @@
+version: '3'
+
+tasks:
+  build:
+    desc: Build the project
+    cmds:
+      - ./gradlew build
+
+  test:
+    desc: Run all tests
+    cmds:
+      - ./gradlew test
+
+  clean:
+    desc: Clean build artifacts
+    cmds:
+      - ./gradlew clean
+
+  package:
+    desc: Create executable JAR
+    cmds:
+      - ./gradlew clean bootJar
+
+  run:
+    desc: Run the SQL loader (requires SQL_FILE, JDBC_URL, DB_USER, DB_PASS environment variables)
+    cmds:
+      - java -jar build/libs/sql-loader.jar --url {{.JDBC_URL}} --username {{.DB_USER}} --password {{.DB_PASS}} {{.SQL_FILE}}
+
+  docker-build:
+    desc: Build Docker image
+    cmds:
+      - task: package
+      - docker build -t sql-loader:latest .
+
+  help:
+    desc: Show available tasks
+    cmds:
+      - task --list
+
+  format:
+    desc: Format Kotlin code
+    cmds:
+      - ./gradlew ktlintFormat
+
+  lint:
+    desc: Lint Kotlin code
+    cmds:
+      - ./gradlew ktlintCheck
+
+  deps:
+    desc: Display dependency tree
+    cmds:
+      - ./gradlew dependencies
+
+  check:
+    desc: Run all checks (build, test, lint)
+    cmds:
+      - task: build
+      - task: test
