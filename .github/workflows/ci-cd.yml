@@ -37,14 +37,14 @@ jobs:
       run: ./gradlew test --no-daemon
     
     - name: Upload test results
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       if: always()
       with:
         name: test-results
         path: build/test-results/test/
     
     - name: Upload test reports
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       if: always()
       with:
         name: test-reports
@@ -74,7 +74,7 @@ jobs:
       run: ./gradlew clean bootJar --no-daemon
     
     - name: Upload JAR
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: sql-loader-jar
         path: build/libs/sql-loader.jar
